@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON APPLICATION</title>
+    </head>
+    <body>
+        <script>
+            let obj1={
+                key1:{
+                    sub:`ReactJS`
+                }
+            };
+            document.write(obj1.key1.sub, `<br>`);
+            document.write(obj1["key1"]["sub"], `<br>`);
+            let {key1}=obj1;
+            let {sub}=key1;
+            document.write(sub, `<br>`);
+        </script>
+    </body>
+</html>

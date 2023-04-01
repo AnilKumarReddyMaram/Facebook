@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AUTHEMATIC</title>
+    </head>
+    <body>
+        <script>
+            let obj1={
+                func_one:function(param1, param2, param3){
+                    this.num=param1+param2+param3;
+                }
+            };
+            let obj2={
+                num:100
+            };
+            //obj1.func_one.call(obj2, 10, 10, 10);
+            //obj1.func_one.apply(obj2, [10, 10, 10]);
+            let my_fun=obj1.func_one.bind(obj2);
+            my_fun(10, 10, 10);
+            console.log(obj2.num);
+        </script>
+    </body>
+</html>

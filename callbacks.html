@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Call Backs</title>
+    </head>
+    <body>
+        <script>
+           /* let func_one=(param1)=>{
+                param1();
+            }
+            func_one(()=>{
+                document.write("Welcome to callbacks");
+            }) Welcome to callbacks */
+           /* let network_call=(posCallBack,negCallBack)=>{
+                let res1=posCallBack();
+                let res2=negCallBack();
+                return res1+"...."+res2;
+            }
+            let res= network_call(()=>{
+                return `oops`;
+            },()=>{
+                return `Bye`;
+            });
+            document.write(res);
+            oops....Bye*/
+           /* let my_func=(param1,param2)=>{
+                param2(param1*param1,false);
+            }
+            my_func(100,(param1,param2)=>{
+                if (!param2){
+                    document.write(param1);
+                }
+            });   10000 */
+            let add=(num,callback)=>{
+                callback(num+5,false);
+            }
+            let sub=(num,callback)=>{
+                callback(num-3,false);
+            }
+            let multiplication=(num,callback)=>{
+                callback(num*2,false);
+            }
+            let division=(num,callback)=>{
+                callback(num/2-2,false);
+            }
+            add(5,(addRes,error)=>{
+                if(!error){
+                    sub(addRes,(subRes,error)=>{
+                        if(!error){
+                            multiplication(subRes,(mulRes,error)=>{
+                                if(!error){
+                                    division(mulRes,(divRes,error)=>{
+                                        if(!error){
+                                            document.write(divRes);
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+            // 5
+        </script>
+    </body>
+</html>

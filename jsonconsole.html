@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON CONSOLE</title>
+    </head>
+    <body>
+        <script>
+            let obj1={
+               key1:`React`,
+               key2:function(){
+                console.log(this.key1);
+                let inner_fn=()=>{
+                    console.log(this.key1);
+                }
+                inner_fn();
+               }
+            };
+            obj1.key2();
+        </script>
+    </body>
+</html>

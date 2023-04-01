@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON TABLE</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <script>
+            let obj={ 
+                product : `astro`, 
+                init: 2023020612, 
+                dataseries: [ { timepoint: 3, cloudcover: 8, seeing: 8, transparency: 4, lifted_index: 2, rh2m: 11, wind10m: {direction: `N`, speed: 1 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 6, cloudcover: 8, seeing: 8, transparency: 4, lifted_index: 2, rh2m: 11, wind10m: { direction: `E`, speed: 2 }, temp2m: 20, prec_type :`none`}, 
+                { timepoint: 9, cloudcover: 9, seeing: 8, transparency: 6, lifted_index: 2, rh2m: 12, wind10m: { direction: `N`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 12, cloudcover: 9, seeing: 7, transparency: 6, lifted_index: 2, rh2m: 12, wind10m: { direction: `NE`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 15, cloudcover: 9, seeing: 6, transparency: 6, lifted_index: 2, rh2m: 12, wind10m: { direction: `NE`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 18, cloudcover: 9, seeing: 6, transparency: 5, lifted_index: 2, rh2m: 11, wind10m: { direction: `NE`, speed: 2 }, temp2m: 21, prec_type: `none`}, 
+                { timepoint: 21, cloudcover: 8, seeing: 6, transparency: 3, lifted_index: 2, rh2m: 9, wind10m: { direction: `NE`, speed: 2 }, temp2m: 23, prec_type: `none`}, 
+                { timepoint: 24, cloudcover: 7, seeing: 6, transparency: 4, lifted_index: 2, rh2m: 9, wind10m: { direction: `N`, speed: 2 }, temp2m: 22, prec_type: `none`}, 
+                { timepoint: 27, cloudcover: 8, seeing: 8, transparency: 4, lifted_index: 2, rh2m: 11, wind10m: { direction: `E`, speed: 2 }, temp2m: 21, prec_type: `none`}, 
+                { timepoint: 30, cloudcover: 8, seeing: 8, transparency: 5, lifted_index: 2, rh2m: 11, wind10m: { direction: `S`, speed: 2 }, temp2m: 21, prec_type: `none`}, 
+                { timepoint: 33, cloudcover: 9, seeing: 7, transparency: 6, lifted_index: 2, rh2m: 12, wind10m: { direction: `S`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 36, cloudcover: 7, seeing: 6, transparency: 5, lifted_index: 6, rh2m: 11, wind10m: { direction: `S`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 39, cloudcover: 6, seeing: 6, transparency: 4, lifted_index: 6, rh2m: 9, wind10m: { direction: `SE`, speed: 2 }, temp2m: 23, prec_type: `none`},
+                { timepoint: 42, cloudcover: 7, seeing: 6, transparency: 3, lifted_index: 6, rh2m: 8, wind10m: { direction: `S`, speed: 2 }, temp2m: 23, prec_type: `none`}, 
+                { timepoint: 45, cloudcover: 9, seeing: 6, transparency: 3, lifted_index: 6, rh2m: 9, wind10m: { direction: `SE`, speed: 2 }, temp2m: 22, prec_type: `none`}, 
+                { timepoint: 48, cloudcover: 9, seeing: 6, transparency: 4, lifted_index: 6, rh2m: 10, wind10m: { direction: `SE`, speed: 2 }, temp2m: 22, prec_type: `none`}, 
+                { timepoint: 51, cloudcover: 9, seeing: 6, transparency: 4, lifted_index: 6, rh2m: 11, wind10m: { direction: `SE`, speed: 2 }, temp2m: 21, prec_type: `none`}, 
+                { timepoint: 54, cloudcover: 9, seeing: 6, transparency: 5, lifted_index: 6, rh2m: 11, wind10m: { direction: `SE`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 57, cloudcover: 9, seeing: 6, transparency: 5, lifted_index: 6, rh2m: 11, wind10m: { direction: `SE`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 60, cloudcover: 9, seeing: 6, transparency: 5, lifted_index: 6, rh2m: 11, wind10m: { direction: `SE`, speed: 2 }, temp2m: 20, prec_type: `none`}, 
+                { timepoint: 63, cloudcover: 9, seeing: 6, transparency: 5, lifted_index: 6, rh2m: 11, wind10m: { direction: `SE`, speed: 2 }, temp2m: 21, prec_type: `none`}, 
+                { timepoint: 66, cloudcover: 9, seeing: 6, transparency: 4, lifted_index: 6, rh2m: 10, wind10m: { direction: `S`, speed: 2 }, temp2m: 22, prec_type: `none`}, 
+                { timepoint: 69, cloudcover: 9, seeing: 6, transparency: 4, lifted_index: 6, rh2m: 10, wind10m: { direction: `E`, speed: 2 }, temp2m: 22, prec_type: `rain`}, 
+                { timepoint: 72, cloudcover: 9, seeing: 6, transparency: 4, lifted_index: 10, rh2m: 10, wind10m: { direction: `E`, speed: 2 }, temp2m: 21, prec_type: `rain`}, ] };
+                //Momin 
+                let{product, init, dataseries} =obj;
+                document.write(`<div class="container mt-5">
+                <table class="table table-danger table-bordered table-striped table-hover">
+                    <tr>
+                        <th> ${product}</th>
+                        <th colspan="9"></th>
+                    </tr>
+                    <tr>
+                        <th> ${init}</th>
+                        <th colspan="9"></th>
+                    </tr>
+                    <tr>
+                        <th>timepoint</th>
+                        <th>cloudcover</th>
+                        <th>seeing</th>
+                        <th>transparency</th>
+                        <th>lifted_index</th>
+                        <th>rh2m</th>
+                        <th colspan="2">wind10m</th>
+                        <th>temp2m</th>
+                        <th>prec_type</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>direction</td>
+                        <td> speed</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    `);
+                    dataseries.forEach((e)=>{
+                        document.write(` <tr>
+                            <td>${e.timepoint}</td>
+                            <td>${e.cloudcover}</td>
+                            <td>${e.seeing}</td>
+                            <td>${e.transparency}</td>
+                            <td>${e.lifted_index}</td>
+                            <td>${e.rh2m}</td>
+                            <td>${e.wind10m.direction}</td>
+                            <td>${e.wind10m.speed}</td>
+                            <td>${e.temp2m}</td>
+                            <td>${e.prec_type}</td>
+                        </tr>`);
+                    });
+                    document.write(`</table></div>`)
+        </script>
+    </body>
+</html> 

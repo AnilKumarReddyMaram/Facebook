@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Promises</title>
+    </head>
+    <body>
+        <script>
+            /*
+            let promise1=new Promise((resolve,reject)=>{
+                resolve("Welcome to Promises");
+            });
+            */
+           /* promise1.then((posRes)=>{
+                document.write(posRes);
+            },(errRes)=>{
+                document.write(errRes);
+            });//Welcome to Promises
+            */
+            /*
+            let consume=async()=>{
+                let res=await promise1;
+                document.write(res);
+            }
+            consume();
+            //Welcome to Promises
+            */
+            /*
+            let promise1=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Welcome to Promises");
+                },5000);
+            });*/
+            /*
+            promise1.then((posRes)=>{
+                document.write(posRes);
+            },(errRes)=>{
+                document.write(errRes);
+            });
+            */
+            /*
+            let consume=async()=>{
+                let res=await promise1;
+                document.write(res);
+            }
+            consume();
+            */
+            /*
+            let promise1=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Promise1");
+                },0);
+            });
+            let promise2=new Promise((resolve,reject)=>{
+                resolve("Promise2");
+            });
+            */
+            /*
+            let consume1=async()=>{
+                let res1=await promise1;
+                console.log(res1);
+            }
+            consume1();
+            let consume2=async()=>{
+                let res2=await promise2;
+                console.log(res2);
+            }
+            consume2();
+            */      
+            /*
+            promise1.then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                console.log(errRes);
+            });
+            promise2.then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                console.log(errRes);
+            });
+            */
+            /*
+            let promise1=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Promise1");
+                },5000);
+            });
+            let promise2=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Promise2");
+                },10000);
+            });
+            let promise3=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Promise3");
+                },15000);
+            });
+            */
+            /*
+            promise1.then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                console.log(errRes);
+            });
+            promise2.then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                console.log(errRes);
+            });
+            promise3.then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                console.log(errRes);
+            });
+            */
+            /*
+            let consume1=async()=>{
+                let res1=await promise1;
+                console.log(res1);
+            }
+            consume1();
+            let consume2=async()=>{
+                let res2=await promise2;
+                console.log(res2);
+            }
+            consume2();
+            let consume3=async()=>{
+                let res3=await promise3;
+                console.log(res3);
+            }
+            consume3();
+            */
+            /*
+            Promise.all([promise1,promise2,promise3]).then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                document.write(errRes);
+            });
+            */
+            /*
+            Promise.race([promise1,promise2,promise3]).then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                document.write(errRes);
+            });
+            */
+            
+            /*Promise.allSettled([promise1,promise2,promise3]).then((posRes)=>{
+                console.log(posRes);
+            },(errRes)=>{
+                document.write(errRes);
+            });
+            */
+            /*let add=(num)=>{
+                return new Promise((resolve,reject)=>{
+                    resolve(num+5);
+                })
+            }
+            let sub=(num)=>{
+                return new Promise((resolve,reject)=>{
+                    resolve(num-3);
+                })
+            }
+            let mul=(num)=>{
+                return new Promise((resolve,reject)=>{
+                    resolve(num*2);
+                })
+            }
+            let div=(num)=>{
+                return new Promise((resolve,reject)=>{
+                    resolve(num/2-2);
+                })
+            }
+            let consume=async ()=>{
+                let addRes=await add(5);
+                let subRes=await sub(addRes);
+                let mulRes=await mul(subRes);
+                let divRes=await div(mulRes);
+                console.log(addRes,subRes,mulRes,divRes);
+            }
+            consume();*/
+            let promise1=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(100);
+                },1000);
+            });
+            promise1.then((posRes)=>{
+                console.log("chain1...",posRes*posRes);
+                return posRes*posRes;
+            },(errRes)=>{
+                console.log(errRes);
+            }).then((res)=>{
+                console.log("chain2...",res*2);
+            },(err)=>{
+                console.log(err);
+            })
+        </script>
+    </body>
+</html>

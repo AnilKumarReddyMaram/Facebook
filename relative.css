@@ -1,0 +1,35 @@
+  div{
+    width: 100px;
+    height: 150px;
+    margin:10px;
+}
+.div1{
+    background-color: #ff0000;
+    position: relative;
+    left: 0;
+    bottom:auto;  
+}
+.div2{
+    background-color: #008000;
+    position: relative;
+    left:20px;
+    bottom: 125px;
+}
+.div3{
+    background-color: #0000ff;
+    position: relative;
+    left: 40px;
+    bottom: 250px;
+}
+.div4{
+    background-color: #ffa500;
+    position: relative;
+    left:60px;
+    bottom: 375px;
+}
+.div5{
+    background-color: #9acd32;
+    position: relative;
+    left: 80px;
+    bottom: 500px;
+}
